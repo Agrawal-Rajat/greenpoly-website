@@ -688,6 +688,14 @@ body {
   overflow: hidden;
 }
 
+.product-banner {
+  position: relative;
+  background: url("/assets/images/product-banner.png") center/cover no-repeat;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
 /* Dark overlay for better text visibility */
 .banner-overlay {
   position: absolute;
@@ -1356,6 +1364,129 @@ body {
     gap: 2px;
     align-items: center;
     width: 80%;
+  }
+}
+
+/* ===========================
+    Services Section Styles
+   =========================== */
+/* ===== Services Section ===== */
+.services-section {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+  background-color: #f9fdf9;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Category Heading */
+.services-category {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.services-category h2 {
+  font-size: 32px;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 700px;
+  margin: 1.2rem auto;
+  line-height: 1.6;
+}
+.services-category p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Product Layout */
+.services-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+/* Left: Image */
+.services-image {
+  flex: 1;
+  min-width: 280px;
+}
+.services-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Right: Table */
+.services-details {
+  flex: 1;
+  min-width: 280px;
+}
+.services-details h3 {
+  font-size: 24px;
+  color: #1b5e20;
+  margin-bottom: 15px;
+}
+.services-details table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.services-details th,
+.services-details td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+  color: #033;
+}
+.services-details th {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* Thumbnails Row */
+.services-thumbnails {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  flex-wrap: nowrap;
+  margin-bottom: 5rem;
+}
+.services-thumbnails img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.services-thumbnails img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 768px) {
+  .services-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Thumbnails Slider */
+  .services-thumbnails {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+    scrollbar-width: thin;
+  }
+  .services-thumbnails img {
+    flex: 0 0 auto;
+    width: 50%;
   }
 }
 
