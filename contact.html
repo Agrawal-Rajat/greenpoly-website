@@ -19,6 +19,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
 
@@ -31,6 +32,166 @@
 </head>
 
 <body>
+
+    <!-- ===========================
+               NAVBAR
+          ============================ -->
+    <nav class="floating-navbar">
+        <div class="logo">
+            <a href="index.html"><img src="assets/images/logo-removebg.png" alt="Green Poly Logo" /></a>
+        </div>
+
+        <!-- Hamburger Icon (Mobile) -->
+        <div class="hamburger" id="hamburger">☰</div>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#sustainability">Sustainability</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===========================
+                   BANNER
+              ============================ -->
+    <section class="contact-banner">
+        <div class="banner-overlay">
+            <h1 class="banner-title">Contact GreenPoly</h1>
+        </div>
+    </section>
+
+
+
+    <!-- ===========================
+     MAP + FORM SECTION
+============================ -->
+    <section class="contact-section">
+        <div class="contact-heading">
+            <h2>Get in <span class="highlight">Touch</span> </h2>
+            <p>Have questions or ideas? We’d love to hear from you. Drop us a message or visit us on the map below.</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Map -->
+            <div class="contact-map">
+                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen loading="lazy"></iframe> -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d29351.16615781949!2d70.0874752!3d23.1374848!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1754804939147!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <!-- Form -->
+            <form class="contact-form">
+                <h3>Send Us a Message</h3>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- ===========================
+     CONTACT INFO SECTION
+============================ -->
+    <section class="contact-info-section">
+        <div class="contact-info-container">
+
+            <!-- About Section -->
+            <div class="contact-info-item">
+                <div class="contact-info-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>ABOUT US</h3>
+                <p>GreenPoly - Building a sustainable and eco-friendly future.</p>
+                <p>Innovations for a healthier planet.</p>
+            </div>
+
+            <!-- Phone Section -->
+            <div class="contact-info-item">
+                <div class="contact-info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>PHONE</h3>
+                <p>+91 123 456 7890</p>
+                <p>+91 987 654 3210</p>
+            </div>
+
+            <!-- Location Section -->
+            <div class="contact-info-item">
+                <div class="contact-info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>OUR OFFICE</h3>
+                <p>GreenPoly HQ</p>
+                <p>Eco Park Road, Mumbai, India</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- ===========================
+                           FOOTER SECTION
+            ============================ -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Company Description -->
+            <div class="footer-column">
+                <h3>GreenPoly</h3>
+                <p>Building a sustainable future with compostable, biodegradable, and eco-friendly products. Trusted
+                    across
+                    industries for quality and responsibility.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-envelope"></i> support@ecobharat.in</li>
+                    <li><i class="fas fa-phone-alt"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Bhopal, India</li>
+                </ul>
+                <!-- Social Links -->
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 GreenPoly. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />

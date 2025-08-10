@@ -656,6 +656,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    /* gap: 2rem; */
   }
 
   .footer-column {
@@ -674,6 +675,14 @@ body {
 .about-banner {
   position: relative;
   background: url("/assets/images/about-banner.png") center/cover no-repeat;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.contact-banner {
+  position: relative;
+  background: url("/assets/images/contact-banner.png") center/cover no-repeat;
   height: 400px;
   margin: auto;
   overflow: hidden;
@@ -1137,6 +1146,216 @@ body {
   .green-future p {
     font-size: 1rem;
     text-align: center;
+  }
+}
+
+/* ===========================
+   MAP + CONTACT SECTION
+=========================== */
+.contact-section {
+  padding: 60px 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-heading h2 {
+  font-size: 3rem;
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-heading p {
+  font-size: 1.2rem;
+  color: #033;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* ==== Container ==== */
+.contact-container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* ==== Map ==== */
+.contact-map {
+  flex: 1;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  border: none;
+}
+
+/* ==== Form ==== */
+.contact-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form h2 {
+  color: #2e7d32;
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #e8f5e9;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: #d0f0d2;
+  box-shadow: 0 0 0 2px #2e7d32;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #256b27;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .contact-map iframe {
+    min-height: 400px;
+  }
+
+  .contact-form {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-heading h2 {
+    font-size: 26px;
+  }
+
+  .contact-heading p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+    width: 80%;
+  }
+
+  .contact-form h2 {
+    font-size: 2rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .contact-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* ===========================
+   CONTACT INFO SECTION
+=========================== */
+.contact-info-section {
+  background: #e6f9e6;
+  padding: 50px 20px;
+}
+
+.contact-info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-info-item {
+  flex: 1 1 250px;
+}
+
+.contact-info-icon {
+  background: #2e7d32;
+  color: white;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin: 0 auto 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.contact-info-icon:hover {
+  background: #1b5e20;
+  transform: scale(1.1);
+}
+
+.contact-info-item h3 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #033;
+}
+
+.contact-info-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 2px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-info-container {
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+    width: 80%;
   }
 }
 
