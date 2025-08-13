@@ -696,6 +696,14 @@ body {
   overflow: hidden;
 }
 
+.sustain-banner {
+  position: relative;
+  background: url("/assets/images/sustain-banner.png") center/cover no-repeat;
+  height: 500px;
+  margin: auto;
+  overflow: hidden;
+}
+
 /* Dark overlay for better text visibility */
 .banner-overlay {
   position: absolute;
@@ -1487,6 +1495,468 @@ body {
   .services-thumbnails img {
     flex: 0 0 auto;
     width: 50%;
+  }
+}
+
+/* =========================
+   STORY-DRIVEN SECTION STYLES
+   SEO & Accessibility: 
+     - Mobile-first approach
+     - Legible font sizes
+     - High contrast text
+========================= */
+
+.brand-story {
+  padding: 60px 20px;
+  background: #e6f9e6; /* Light background for readability */
+}
+
+.story-container {
+  display: flex;
+  flex-direction: column; /* Mobile-first stacking */
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.story-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.story-content {
+  text-align: left;
+  color: #333;
+}
+
+.story-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2e7d32;
+}
+
+.story-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .story-container {
+    flex-direction: row; /* Side-by-side layout */
+    align-items: flex-start;
+  }
+
+  .story-content {
+    flex: 1;
+    padding-left: 30px;
+  }
+
+  .story-image {
+    flex: 1;
+  }
+}
+
+/* =========================
+   COUNTER SECTION STYLES
+========================= */
+/* ===== COUNTERS SECTION ===== */
+.counters-section {
+  background: #ffffff;
+  padding: 60px 20px;
+  color: #2e7d32;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+.counters-heading h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.counters-heading p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: black;
+}
+
+.counters-item p {
+  opacity: 1;
+}
+
+/* Flex container for counters */
+.counters-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* Counter Item */
+.counter-item {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.counter-number {
+  font-size: 40px;
+  font-weight: bold;
+  display: block;
+}
+
+.counter-label {
+  font-size: 16px;
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .counter-number {
+    font-size: 32px;
+  }
+  .counter-label {
+    font-size: 14px;
+  }
+}
+
+/* ================================
+   Section: Packaging Comparison
+   SEO-friendly, Mobile Responsive
+   ================================ */
+
+#packaging-comparison {
+  padding: 2rem 10rem;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  background-color: #e6f9e6;
+}
+
+#packaging-comparison h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 1.5rem;
+}
+
+#packaging-comparison .intro-text {
+  text-align: center;
+  color: #4a5568;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+#packaging-comparison .table-wrapper {
+  overflow-x: auto; /* Mobile scrolling for table */
+}
+
+#packaging-comparison table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  min-width: 600px;
+}
+
+#packaging-comparison thead tr {
+  background-color: #edf2f7;
+  color: #2d3748;
+}
+
+#packaging-comparison th,
+#packaging-comparison td {
+  padding: 12px;
+  border: 1px solid #cbd5e0;
+  text-align: left;
+}
+
+#packaging-comparison tbody td {
+  color: #2e7d32;
+  border: 1px solid #e2e8f0;
+}
+
+#packaging-comparison .conclusion {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #4a5568;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  #packaging-comparison {
+    padding: 2rem 1rem;
+  }
+
+  #packaging-comparison h2 {
+    font-size: 1.5rem;
+  }
+
+  #packaging-comparison table {
+    font-size: 0.9rem;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  #packaging-comparison h2 {
+    font-size: 1.3rem;
+  }
+
+  #packaging-comparison th,
+  #packaging-comparison td {
+    padding: 8px;
+  }
+}
+
+/* ======================================
+   Plastic Decomposition Timeline Styles
+   SEO-friendly, Mobile Responsive
+   ====================================== */
+/* 🌍 Plastic Decomposition Timeline Section */
+#plastic-timeline {
+  padding: 3rem 1rem;
+  color: white;
+  background: url("/assets/images/plastic-bg.png") no-repeat center center/cover;
+  position: relative;
+  overflow: hidden;
+}
+
+#plastic-timeline::before {
+  /* Dark overlay for better text readability */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#plastic-timeline h2 {
+  text-align: center;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+  color: #2e7d32;
+}
+
+#plastic-timeline .timeline-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+/* =======================
+   Timeline Container
+   ======================= */
+#plastic-timeline .timeline {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  padding-left: 20px;
+  border-left: 3px solid #00ff99;
+  z-index: 2;
+}
+
+/* =======================
+   Timeline Items
+   ======================= */
+#plastic-timeline .timeline-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease-out;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+#plastic-timeline .timeline-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Year/Stage Circle */
+#plastic-timeline .timeline-item::before {
+  content: attr(data-year);
+  position: absolute;
+  left: -90px;
+  background: #00ff99;
+  color: #000;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  top: 0;
+  white-space: nowrap;
+}
+
+/* =======================
+   Timeline Content Box
+   ======================= */
+#plastic-timeline .timeline-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+#plastic-timeline .timeline-content h3 {
+  margin-bottom: 0.5rem;
+  color: #00ff99;
+}
+
+#plastic-timeline .timeline-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =======================
+   Mobile Responsiveness
+   ======================= */
+@media (max-width: 768px) {
+  #plastic-timeline h2 {
+    font-size: 3rem;
+  }
+
+  #plastic-timeline .timeline-intro {
+    font-size: 1rem;
+  }
+
+  #plastic-timeline .timeline {
+    padding-left: 10px;
+    border-left: none;
+  }
+
+  #plastic-timeline .timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 0;
+  }
+
+  /* Move year label above content for visibility */
+  #plastic-timeline .timeline-item::before {
+    position: relative;
+    left: 0;
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    background: #00ff99;
+    color: #000;
+  }
+
+  #plastic-timeline .timeline-content {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #plastic-timeline h2 {
+    font-size: 1.4rem;
+  }
+
+  #plastic-timeline .timeline-item::before {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  #plastic-timeline .timeline-content {
+    font-size: 0.85rem;
+    padding: 0.8rem;
+  }
+}
+/* =======================
+   Sustainable Packaging Section Styles
+   ======================= */
+.sustainable-packaging {
+  padding: 50px 20px;
+  background-color: #e6f9e6;
+}
+
+.sustainable-packaging .container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap; /* Ensures mobile responsiveness */
+}
+
+.image-container {
+  flex: 1 1 45%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1 1 50%;
+}
+
+.content h2 {
+  font-size: 2.5rem;
+  color: #2b6b2b;
+  margin-bottom: 15px;
+}
+
+.content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #033;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  padding-left: 25px;
+  position: relative;
+  color: black;
+}
+
+.content ul li::before {
+  content: "✔";
+  color: green;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .sustainable-packaging .container {
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .content h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .content p {
+    font-size: 1rem;
   }
 }
 
