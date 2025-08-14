@@ -56,18 +56,8 @@ body {
   animation: fadeIn 2s ease-in-out;
 }
 
-.hero-text h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--green-primary); /* darker green for better visibility */
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--white);
+.hero-text img {
+  height: 40rem;
 }
 
 /* Fade-in animation for hero text */
@@ -104,7 +94,8 @@ body {
 
 /* Logo inside Navbar */
 .floating-navbar .logo img {
-  height: 40px;
+  height: 2rem;
+  scale: 2;
   vertical-align: middle;
 }
 
@@ -1423,15 +1414,38 @@ body {
 }
 
 /* Left: Image */
+/* Container needs to clip the overlay */
 .services-image {
   flex: 1;
   min-width: 280px;
+  position: relative; /* enable absolute positioning for ::after */
+  border-radius: 12px; /* move radius to the container */
+  overflow: hidden; /* clip the overlay inside the rounded corners */
 }
+
+/* Product image */
 .services-image img {
+  display: block;
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: inherit; /* match container radius */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1; /* sits under the overlay now */
+}
+
+/* Watermark overlay (ON TOP of the image) */
+.services-image::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* cover the whole container */
+  background-image: url("/assets/images/logo-removebg.png");
+  background-repeat: no-repeat;
+  background-position: right 40% bottom 40%; /* move it off the edges */
+  background-size: clamp(120px, 35%, 260px); /* responsive size */
+  opacity: 1; /* subtle */
+  z-index: 2; /* above the image */
+  pointer-events: none; /* clicks pass through */
 }
 
 /* Right: Table */
@@ -1961,6 +1975,72 @@ body {
 }
 
 /* ===============================
+   Sustainability Quotes Section STYLES
+================================= */
+
+.sustainability-quotes-section {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+/* SEO-friendly heading styling */
+.sustainability-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #065f46; /* Deep green for eco feel */
+  margin-bottom: 2rem;
+}
+
+/* Container for quotes */
+.sustainability-quotes-container {
+  display: flex;
+  flex-direction: column; /* Mobile first: stack vertically */
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual quote cards */
+.sustainability-quote-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #033; /* Dark green text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for desktop */
+.sustainability-quote-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Cite styling */
+.sustainability-quote-author {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  font-style: normal;
+  color: #2e7d32; /* Emerald green */
+  font-weight: 500;
+}
+
+/* Responsive: show in a row for bigger screens */
+@media (min-width: 768px) {
+  .sustainability-quotes-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sustainability-quote-card {
+    flex: 1;
+    max-width: 30%;
+  }
+}
+
+/* ===============================
    MOBILE RESPONSIVE STYLES
 ================================= */
 @media (max-width: 768px) {
@@ -1999,16 +2079,12 @@ body {
   }
 
   .floating-navbar .logo img {
-    height: 40px;
+    height: 2rem;
+    scale: 2;
   }
 
-  .hero-text h1 {
-    font-size: 3rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-    text-align: center;
+  .hero-text img {
+    height: 30rem;
   }
 
   .faq-container h2 {
