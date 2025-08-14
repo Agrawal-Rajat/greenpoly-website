@@ -1434,20 +1434,6 @@ body {
   z-index: 1; /* sits under the overlay now */
 }
 
-/* Watermark overlay (ON TOP of the image) */
-.services-image::after {
-  content: "";
-  position: absolute;
-  inset: 0; /* cover the whole container */
-  background-image: url("/assets/images/logo-removebg.png");
-  background-repeat: no-repeat;
-  background-position: right 40% bottom 40%; /* move it off the edges */
-  background-size: clamp(120px, 35%, 260px); /* responsive size */
-  opacity: 1; /* subtle */
-  z-index: 2; /* above the image */
-  pointer-events: none; /* clicks pass through */
-}
-
 /* Right: Table */
 .services-details {
   flex: 1;

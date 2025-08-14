@@ -183,9 +183,7 @@
                 </ul>
                 <!-- Social Links -->
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter" aria-label="Twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram" aria-label="Instagram"></i></a>
+
                     <a href="#"><i class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
                 </div>
             </div>
@@ -206,6 +204,7 @@
     <!-- Add SweetAlert2 CSS & JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const params = new URLSearchParams(window.location.search);
@@ -213,7 +212,7 @@
                 Swal.fire({
                     icon: 'success',
                     title: 'Message Sent!',
-                    text: 'We have received your message and will get back to you soon.',
+                    html: 'We have received your message and will get back to you soon.<br><br><strong>Contact:</strong><br>Paritosh Soni - 95894 61085<br>Prashant Khare - 98102 79209',
                     confirmButtonColor: '#10b981'
                 });
             }
