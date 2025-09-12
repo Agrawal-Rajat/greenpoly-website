@@ -57,7 +57,7 @@ body {
 }
 
 .hero-text img {
-  height: 30rem;
+  height: 25rem;
 }
 
 .hero-text .brand-subtitle {
@@ -665,11 +665,12 @@ body {
 
   .footer-column {
     max-width: 90%;
-    max-height: 200px;
+    max-height: 210px;
   }
 
   .social-icons {
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
@@ -2102,8 +2103,13 @@ body {
     width: 90%;
   }
 
+  .hero-text img {
+    scale: 0.8;
+  }
+
   .hero-text .brand-subtitle {
     margin-bottom: 3rem;
+    font-size: 1rem;
   }
 
   .hamburger {
