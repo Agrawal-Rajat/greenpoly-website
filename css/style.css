@@ -2143,3 +2143,140 @@ body {
     font-size: 2rem;
   }
 }
+
+.contact-details {
+  margin-left: 30px;   
+  line-height: 1.3;    
+}
+
+.contact-person {
+  font-size: 0.85em;
+  font-weight: 500;    
+  color: #333;
+}
+
+.designation {
+  font-size: 0.8em;
+  font-weight: 400;   
+  color: #666;
+}
+
+
+
+/* ****** CPCB Section ******* */
+/* CPCB Section */
+.cpcb-section {
+  background: #f0fff4; /* light green background */
+  padding: 40px;
+  border-radius: 12px;
+  margin: 40px 0;
+  text-align: center;
+}
+
+.cpcb-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1b5e20; /* dark green */
+  margin-bottom: 30px;
+}
+
+/* Single Card (block) */
+.cpcb-card.full-width {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+  margin: auto;
+}
+
+.cpcb-card h3 {
+  color: #2e7d32;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Guidelines List */
+.cpcb-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cpcb-card ul li {
+  margin-bottom: 12px;
+  padding-left: 24px;
+  position: relative;
+  color: #333;
+  font-size: 16px;
+}
+
+.cpcb-card ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2e7d32; /* green check */
+  font-weight: bold;
+}
+
+/* Quick Tests Table */
+.cpcb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.cpcb-table th, .cpcb-table td {
+  border: 1px solid #c8e6c9;
+  padding: 10px;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+}
+
+.cpcb-table th {
+  background: #e8f5e9;
+  color: #1b5e20;
+  font-weight: bold;
+}
+
+/* Source */
+.cpcb-source {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+}
+
+.cpcb-source a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Make table responsive */
+.cpcb-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  display: block;           /* allow scroll */
+  overflow-x: auto;         /* scroll horizontally */
+  white-space: nowrap;      /* prevent text wrapping */
+}
+
+/* Adjust on smaller devices */
+@media (max-width: 768px) {
+  .cpcb-table th,
+  .cpcb-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cpcb-table th,
+  .cpcb-table td {
+    font-size: 13px;
+    padding: 6px;
+  }
+}
