@@ -57,7 +57,20 @@ body {
 }
 
 .hero-text img {
-  height: 40rem;
+  height: 30rem;
+}
+
+.hero-text .brand-subtitle {
+  /* margin-top: -10rem; */
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.5;
+  /* background: rgba(3, 78, 41, 0.6);  */
+  padding: 6px 12px;
+  border-radius: 8px;
+  display: inline-block;
 }
 
 /* Fade-in animation for hero text */
@@ -977,6 +990,24 @@ body {
   margin-bottom: 15px;
 }
 
+.education {
+  font-style: italic;
+  color: #2d572c;
+  margin-bottom: 10px;
+}
+
+.linkedin-link {
+  display: inline-block;
+  color: #0a66c2;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.linkedin-link:hover {
+  text-decoration: underline;
+}
+
 /* 📱 Mobile Responsive */
 @media (max-width: 768px) {
   .ceo-container {
@@ -1410,7 +1441,7 @@ body {
   flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
-  margin-bottom: 25px;
+  margin-bottom: 6rem;
 }
 
 /* Left: Image */
@@ -1496,6 +1527,37 @@ body {
     flex: 0 0 auto;
     width: 50%;
   }
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* =========================
+   PRODUCT CATELOGUE
+========================= */
+.catalogue-download {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #2e7d32; /* main green */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn:hover {
+  background-color: #1b5e20; /* darker green */
+  transform: scale(1.05);
 }
 
 /* =========================
@@ -2040,6 +2102,10 @@ body {
     width: 90%;
   }
 
+  .hero-text .brand-subtitle {
+    margin-bottom: 3rem;
+  }
+
   .hamburger {
     display: block;
   }
@@ -2070,7 +2136,7 @@ body {
   }
 
   .hero-text img {
-    height: 30rem;
+    height: 25rem;
   }
 
   .faq-container h2 {
