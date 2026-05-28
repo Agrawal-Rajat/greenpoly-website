@@ -7,10 +7,12 @@ hamburger.addEventListener('click', () => {
 });
 
 // <!--AOS Animate on Scroll-- >
-AOS.init({
-    duration: 1000,
-    once: true
-});
+if (window.AOS) {
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+}
 
 
 document.querySelectorAll('.faq-question').forEach((question) => {

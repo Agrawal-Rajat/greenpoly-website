@@ -4,91 +4,325 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Certificates - Coming Soon</title>
+    <meta name="description"
+        content="GreenPoly certificates page featuring the MPPCB pollution certificate and compliance document viewer." />
+    <meta name="keywords" content="GreenPoly, certificates, MPPCB, pollution certificate, compliance" />
+    <meta name="author" content="GreenPoly" />
+    <title>Certificates - GreenPoly</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-r14aDJwJ3p+YrU6huy5n1hqX0vGx+E6e2bEZZ8NODhrf+dZpYmm38X0Uzn4RGt7wfj1tRo7TXNi6pY0mULJXjQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: #e8f5e9;
-            /* light green background */
-            color: #2e7d32;
-            /* dark green text */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            font-family: "Inter", sans-serif;
+            background: linear-gradient(180deg, #f4fbf4 0%, #eaf7ea 100%);
+            color: #1f422d;
+        }
+
+        .certificate-page {
+            padding-bottom: 60px;
+        }
+
+        .certificate-page .logo a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .certificate-hero {
+            padding: 140px 20px 30px;
             text-align: center;
+            background: radial-gradient(circle at top, rgba(126, 219, 82, 0.18), transparent 40%);
         }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
+        .certificate-hero h1 {
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            color: #14532d;
+            margin-bottom: 12px;
+            line-height: 1.05;
         }
 
-        p {
-            font-size: 1.2rem;
-            max-width: 500px;
-            margin: 0 auto 2rem;
+        .certificate-hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #476053;
         }
 
-        .loader {
-            border: 6px solid #c8e6c9;
-            border-top: 6px solid #66bb6a;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin-bottom: 1.5rem;
+        .certificate-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 24px;
         }
 
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
+        .certificate-card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 18px 40px rgba(12, 53, 27, 0.1);
+            border: 1px solid rgba(20, 83, 45, 0.08);
+            overflow: hidden;
+        }
+
+        .certificate-card__header {
+            padding: 22px 24px;
+            background: linear-gradient(135deg, #0f5a2f 0%, #1f7a41 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .certificate-card__title {
+            margin: 0;
+            font-size: 1.35rem;
+        }
+
+        .certificate-card__tag {
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.16);
+            font-size: 0.9rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .certificate-preview {
+            padding: 18px;
+            background: linear-gradient(180deg, #f9fff8 0%, #ffffff 100%);
+        }
+
+        .certificate-preview__frame {
+            width: 100%;
+            min-height: 74vh;
+            border: 0;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: inset 0 0 0 1px rgba(20, 83, 45, 0.08);
+        }
+
+        .certificate-card__actions {
+            padding: 0 24px 24px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .certificate-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            border-radius: 999px;
+            padding: 12px 18px;
+            font-weight: 700;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+        }
+
+        .certificate-btn.primary {
+            background: #7edb52;
+            color: #1f422d;
+            box-shadow: 0 10px 22px rgba(126, 219, 82, 0.28);
+        }
+
+        .certificate-btn.secondary {
+            background: #eef8ef;
+            color: #14532d;
+            border: 1px solid rgba(20, 83, 45, 0.12);
+        }
+
+        .certificate-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .certificate-aside {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 14px 32px rgba(12, 53, 27, 0.08);
+            border: 1px solid rgba(20, 83, 45, 0.08);
+        }
+
+        .certificate-aside h2 {
+            margin: 0 0 10px;
+            color: #14532d;
+            font-size: 1.5rem;
+        }
+
+        .certificate-aside p {
+            margin: 0 0 18px;
+            color: #51635a;
+            line-height: 1.7;
+        }
+
+        .certificate-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 12px;
+        }
+
+        .certificate-list li {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px solid rgba(20, 83, 45, 0.08);
+            color: #405448;
+        }
+
+        .certificate-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .certificate-list i {
+            color: #1f7a41;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 960px) {
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certificate-preview__frame {
+                min-height: 66vh;
             }
         }
 
+        @media (max-width: 640px) {
+            .certificate-hero {
+                padding-top: 118px;
+            }
 
-        .home-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #66bb6a;
-            /* green button */
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: background 0.3s;
-            margin-top: 1rem;
-        }
+            .certificate-card__header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
 
-        .home-btn:hover {
-            background-color: #43a047;
-            /* darker green on hover */
-        }
+            .certificate-card__actions {
+                flex-direction: column;
+            }
 
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.9rem;
-            color: #4caf50;
+            .certificate-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="loader"></div>
-    <h1>Coming Soon</h1>
-    <p>Our Certificates page is currently under construction.
-        Please check back soon to explore our achievements and recognitions!</p>
+    <div class="certificate-page">
+        <nav class="floating-navbar">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo-removebg.png" alt="Green Poly Logo" /></a>
+            </div>
 
-    <a href="index.html" class="home-btn">Back to Home</a>
+            <div class="hamburger" id="hamburger">☰</div>
 
-    <footer>© 2025 GreenPoly
-        <!-- <p>Made with ❤️ by <a href="https://codeshor.com" target="_blank"
-                style="color: blueviolet; text-decoration: none;">CodeShor</a></p> -->
-    </footer>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="sustainability.html">Sustainability</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="certificates.html" class="active">Certificates</a></li>
+            </ul>
+        </nav>
+
+        <section class="certificate-hero">
+            <h1>Certificates</h1>
+            <p>
+                This page presents one of our certificates in a clean card layout. The certificate is embedded below
+                so visitors can review it directly while staying within the GreenPoly website theme.
+            </p>
+        </section>
+
+        <main class="certificate-grid">
+            <section class="certificate-card" aria-labelledby="certificate-title">
+                <div class="certificate-card__header">
+                    <h2 class="certificate-card__title" id="certificate-title">MPPCB Pollution Certificate</h2>
+                    <span class="certificate-card__tag">Compliance Document</span>
+                </div>
+
+                <div class="certificate-preview">
+                    <iframe class="certificate-preview__frame"
+                        src="https://drive.google.com/file/d/1Y8BqbTwAR8qZ3I83w5GH_ZDspMlJ07J-/preview"
+                        title="MPPCB Pollution Certificate PDF" loading="lazy"></iframe>
+                </div>
+
+                <div class="certificate-card__actions">
+                    <a class="certificate-btn primary"
+                        href="https://drive.google.com/file/d/1Y8BqbTwAR8qZ3I83w5GH_ZDspMlJ07J-/preview" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-solid fa-up-right-from-square"></i> Open PDF
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>GreenPoly</h3>
+                    <p>Building a sustainable future with compostable, biodegradable, and eco-friendly products.
+                        Trusted across industries for quality and responsibility.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="certificates.html">Certificates</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> sales@greenpoly.co.in</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 95894 61085
+                            <div class="contact-details">
+                                <div class="contact-person">Paritosh Sohni</div>
+                                <div class="designation">(Manager, Sales & Marketing)</div>
+                            </div>
+                        </li>
+
+                        <li><i class="fas fa-map-marker-alt"></i> Plot No.33 S5, Plastic Park Tamot, Dist.Raisen (M.P.)
+                            464990</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/prashant-khare-026101180" target="_blank"><i
+                                class="fab fa-linkedin-in" aria-label="LinkedIn"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GreenPoly. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 
 </body>
 
