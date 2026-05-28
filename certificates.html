@@ -105,6 +105,10 @@
             background: linear-gradient(180deg, #f9fff8 0%, #ffffff 100%);
         }
 
+        .certificate-preview__wrapper {
+            position: relative;
+        }
+
         .certificate-preview__frame {
             width: 100%;
             min-height: 74vh;
@@ -112,6 +116,53 @@
             border-radius: 18px;
             background: #fff;
             box-shadow: inset 0 0 0 1px rgba(20, 83, 45, 0.08);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.28s ease, visibility 0.28s ease;
+        }
+
+        .certificate-preview__frame.loaded {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .loader-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 18px;
+            box-sizing: border-box;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            z-index: 10;
+            color: #14532d;
+        }
+
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 5px solid rgba(20, 83, 45, 0.12);
+            border-top-color: #1f7a41;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader-text {
+            font-weight: 700;
+            color: #14532d;
         }
 
         .certificate-card__actions {
@@ -263,9 +314,16 @@
                 </div>
 
                 <div class="certificate-preview">
-                    <iframe class="certificate-preview__frame"
-                        src="https://drive.google.com/file/d/1Y8BqbTwAR8qZ3I83w5GH_ZDspMlJ07J-/preview"
-                        title="MPPCB Pollution Certificate PDF" loading="lazy"></iframe>
+                    <div class="certificate-preview__wrapper">
+                        <div class="loader-overlay" role="status" aria-live="polite">
+                            <div class="spinner" aria-hidden="true"></div>
+                            <div class="loader-text">Loading certificate…</div>
+                        </div>
+
+                        <iframe id="certificateIframe" class="certificate-preview__frame"
+                            src="https://drive.google.com/file/d/1Y8BqbTwAR8qZ3I83w5GH_ZDspMlJ07J-/preview"
+                            title="MPPCB Pollution Certificate PDF" loading="lazy"></iframe>
+                    </div>
                 </div>
 
                 <div class="certificate-card__actions">
@@ -324,6 +382,30 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        (function () {
+            var iframe = document.getElementById('certificateIframe');
+            var loader = document.querySelector('.loader-overlay');
+            if (!iframe) return;
+
+            function showIframe() {
+                if (loader) { loader.style.display = 'none'; }
+                iframe.classList.add('loaded');
+            }
+
+            iframe.addEventListener('load', function () {
+                showIframe();
+            });
+
+            // safety fallback: hide loader after 12s even if load doesn't fire
+            setTimeout(function () {
+                if (!iframe.classList.contains('loaded')) {
+                    showIframe();
+                }
+            }, 12000);
+        })();
+    </script>
 
 </body>
 
